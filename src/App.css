@@ -1,4 +1,18 @@
 .navbar{
-    background-color: #f00;
+    background-color: rgb(224, 120, 224);
+  
  
+}
+.card{
+    border:0 !important;
+    border-radius: 0% !important;
+ 
+}
+.product{
+border:1px solid #d3d3d3 !important ;
+
+}
+.container{
+    margin-left: 10% !important;
+   color: grey
 }

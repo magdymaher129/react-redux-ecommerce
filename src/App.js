@@ -1,11 +1,14 @@
-
-import './App.css';
-import Navbar from './component/Navbar';
+import "./App.css";
+import Card from "./component/Card";
+import Navbar from "./component/Navbar";
+import Products from "./component/Products";
 
 function App() {
   return (
     <>
-<Navbar/>
+      <Navbar />
+      <Card />
+      <Products/>
     </>
   );
 }

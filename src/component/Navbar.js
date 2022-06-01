@@ -3,10 +3,10 @@ import '../App.css'
 export default function Navbar() {
   return (
     <div>
-      <nav className='navbar navbar-expand-lg navbar-light '>
+      <nav className='navbar navbar-expand-lg navbar-light  '>
         <div className='container '>
-          <a className='navbar-brand  fw-bolder fs-4' href='#'>
-            LA COLLECTION
+          <a className='navbar-brand  fw-bolder fs-3' href='#'>
+            FAMILY COLLECTION
           </a>
           <button
             className='navbar-toggler'
