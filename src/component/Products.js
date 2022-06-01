@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Controls from "./Controls";
+import Footer from "./Footer";
 
 import ProductsItems from "./ProductsItems";
 export default function Products() {
@@ -44,7 +45,8 @@ export default function Products() {
     );
   };
   return (
-    <div className='container-fluid mt-4 '>
+    <div className='container-fluid   mt-4'>
+    
       {loading ? (
         <>
        <Load/>
@@ -58,7 +60,7 @@ export default function Products() {
         jewelery={"jewelery"}
        
         />
-          <div className='  row  d-flex flex-colum  justify-content-center'>
+          <div className='row '>
             {Filter.map((product) => {
               return (
                 <>
@@ -75,6 +77,7 @@ export default function Products() {
           </div>
         </>
       )}
+      
     </div>
   );
 }

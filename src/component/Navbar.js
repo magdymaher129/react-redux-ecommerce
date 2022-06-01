@@ -3,7 +3,7 @@ import '../App.css'
 export default function Navbar() {
   return (
     <div>
-      <nav className='navbar navbar-expand-lg navbar-light  '>
+      <nav className='navbar navbar-expand-lg navbar-light pink '>
         <div className='container '>
           <a className='navbar-brand  fw-bolder fs-3' href='#'>
             FAMILY COLLECTION
@@ -23,7 +23,7 @@ export default function Navbar() {
             <ul className='navbar-nav mx-auto mb-2  mb-lg-0 py-4 '>
               <li className='nav-item mx-1'>
                 <a
-                  className='nav-link active  fs-5 text-light'
+                  className='nav-link active  fs-5 text-light fw-bold'
                   aria-current='page'
                   href='#'
                 >
@@ -31,24 +31,24 @@ export default function Navbar() {
                 </a>
               </li>
               <li className='nav-item mx-1 '>
-                <a className='nav-link  fs-5  text-light' href='#'>
+                <a className='nav-link  fs-5  text-light fw-bold' href='#'>
                   Products
                 </a>
               </li>
               <li className='nav-item mx-1'>
-                <a className='nav-link  fs-5 text-light' href='#'>
+                <a className='nav-link  fs-5 text-light fw-bold' href='#'>
                   Abouts
                 </a>
               </li>
               <li className='nav-item mx-1'>
-                <a className='nav-link  fs-5  text-light' href='#'>
+                <a className='nav-link  fs-5  text-light fw-bold' href='#'>
                   Contacts
                 </a>
               </li>
              
 
             </ul>
-            <div className='buttons '>
+            <div className='buttons btx '>
               <a href='#' className='btn btn btn-outline-dark  m-1 fw-bold'>
                 <i class='fa fa-sign-in me-1' aria-hidden='true'></i>Login
               </a>
