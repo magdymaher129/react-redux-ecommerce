@@ -16,11 +16,13 @@ margin-top: 5px !important;
 
 }
 .container{
-    margin:2% !important;
+    margin:1% !important;
     padding: 0!important;
    color: grey
 }
 .btx{
     position: absolute;
     right: 20px !important;
+    
 }
+

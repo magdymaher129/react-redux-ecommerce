@@ -1,83 +1,88 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Controls from "./Controls";
-import Footer from "./Footer";
-
+import { getProductss } from "../reduxStore/createSlice";
 import ProductsItems from "./ProductsItems";
+import { Fragment } from "react";
+  //----------------------------------------------------------------------
+
+
+
+
+
+
 export default function Products() {
-  const [data, setData] = useState([]);
-  const [Filter, setFilter] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [mount, setMount] = useState(true);
-//---------------------------on Updata--------------------------------------
+  const [given, setGiven] = useState([]);
+  //---------------------------Store--------------------------------------
+  const { products, isloading } = useSelector((state) => state.update);
+
+  //---------------------------Store--------------------------------------
+
+  const dispatch = useDispatch();
+  //---------------------------on Updata--------------------------------------
   useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products");
+    dispatch(getProductss());
+  }, [dispatch]);
+  useEffect(() => {
+    setGiven(products);
+  }, [products]);
+  useEffect(() => {
+    console.log(given);
+  }, [given]);
+  //---------------------------on Updata--------------------------------------
+  //---------------------------logic------------------------------------------
+  function filterProduct(cat) {
+    const gg = products.filter((x) => x.category === cat);
 
-      if (mount) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
-      }
-      setMount(false);
+    setGiven(gg);
+  }
 
-    };
-    getProducts();
-  }, []);
-//---------------------------on Updata--------------------------------------
-
-  const filterProduct = (cat) => {
-    const selection = data.filter((x) => x.category === cat);
-    setFilter(selection);
-  };
-
-  const AllProduct = () => {
-   
-    setFilter(data);
+  const AllProduct = (e) => {
+    return setGiven(products);
   };
 
   const Load = () => {
     return (
       <>
-        {" "}
         <h1> Loading....</h1>
       </>
     );
   };
+  //---------------------------logic------------------------------------------
+  //---------------------------UI-----------------------------------------------
   return (
     <div className='container-fluid   mt-4'>
-    
-      {loading ? (
-        <>
-       <Load/>
-        </>
+      {isloading ? (
+        <Load />
       ) : (
-        <>
-        <Controls all={AllProduct}   filter={filterProduct} 
-        men={"men's clothing"} 
-        women={"women's clothing"} 
-        electronics={"electronics"}
-        jewelery={"jewelery"}
-       
-        />
+        <Fragment>
+          <Controls
+            all={AllProduct}
+            filter={filterProduct}
+            men={"men's clothing"}
+            women={"women's clothing"}
+            electronics={"electronics"}
+            jewelery={"jewelery"}
+          />
           <div className='row '>
-            {Filter.map((product) => {
-              return (
-                <>
-                  <ProductsItems
-                    title={product.title}
-                    image={product.image}
-                    desc={product.description}
-                    price={product.price}
-                    key={product.id}
-                  />
-                </>
-              );
-            })}
+            {given &&
+              given.map((x) => {
+                return (
+                  <Fragment key={x.id}>
+                    <ProductsItems
+                      title={x.title}
+                      image={x.image}
+                      desc={x.description}
+                      price={x.price}
+                      id={x.id}
+                    />
+                  </Fragment>
+                );
+              })}
           </div>
-        </>
+        </Fragment>
       )}
-      
     </div>
   );
 }
+//---------------------------UI-----------------------------------------------
