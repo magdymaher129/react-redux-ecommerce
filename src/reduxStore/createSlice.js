@@ -23,6 +23,15 @@ const initialState = {
   qty:0,
 };
 
+//------------------------------------------user reduser---------------------
+const initialUserState = {
+  user:null,
+}
+
+
+
+
+
 getProductss();
 export const updateReducer = createSlice({
   name: "Allproducts",
@@ -42,6 +51,8 @@ export const updateReducer = createSlice({
         state.cartItem.push(temp);
       }
       state.qty+=1;
+
+
     },
     delItem:(state, action) => {
       const itemIndex = state.cartItem.findIndex(
@@ -55,6 +66,7 @@ export const updateReducer = createSlice({
          state.cartItem=nextItem
         }
         state.qty-=1;
+   
     },
     removeitem:(state, action)=>{
       const nextItem= state.cartItem.filter((x)=> x.id !== action.payload.id)
@@ -77,6 +89,9 @@ console.log(state.cartItem.length)
 state.qty=0;
     },
   },
+
+
+
   extraReducers: {
     [getProductss.pending]: (state, action) => {
       state.isloading = true;
@@ -93,5 +108,7 @@ state.qty=0;
     },
   },
 });
+
 export const { addItem, delItem ,removeitem,totalItem,clearAll} = updateReducer.actions;
 export default updateReducer.reducer;
+

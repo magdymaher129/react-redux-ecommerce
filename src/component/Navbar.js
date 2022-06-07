@@ -27,26 +27,26 @@ export default function Navbar() {
             <ul className='navbar-nav mx-auto mb-2  mb-lg-0 py-4 '>
               <li className='nav-item mx-1'>
                 <NavLink
-                  className='nav-link active  fs-5 text-light fw-bold'
+                  className='nav-link active mx-2 fs-5 text-default fw-bold'
                   aria-current='page'
                   to='/'
                 >
-                  Home
+                  HOME
                 </NavLink>
               </li>
-              <li className='nav-item mx-1 '>
-                <NavLink className='nav-link  fs-5  text-light fw-bold' to='/Products'>
-                  Products
+              <li className='nav-item mx-2 '>
+                <NavLink className='nav-link  fs-5  fw-bold' to='/Products'>
+                  PRODUCTS
                 </NavLink>
               </li>
-              <li className='nav-item mx-1'>
-                <NavLink className='nav-link  fs-5 text-light fw-bold' to='/about'>
-                  Abouts
+              <li className='nav-item mx-2'>
+                <NavLink className='nav-link  fs-5  fw-bold' to='/about'>
+                  ABOUTS
                 </NavLink>
               </li>
-              <li className='nav-item mx-1'>
-                <NavLink className='nav-link  fs-5  text-light fw-bold' to='/Contacts'>
-                  Contacts
+              <li className='nav-item mx-2'>
+                <NavLink className='nav-link  fs-5   fw-bold' to='/Contacts'>
+                  CONTACTS
                 </NavLink>
               </li>
              
@@ -60,7 +60,7 @@ export default function Navbar() {
                 <i className='fa fa-user-plus' aria-hidden='true'></i>Register
               </NavLink>
               <NavLink to='/cart' className='btn  btn-dark m-1 fw-bold'>
-                <i className='fa fa-shopping-cart' aria-hidden='true'></i>cart({qty})
+                <i className='fa fa-shopping-cart' aria-hidden='true'></i> cart ({qty})
               </NavLink>
             </div>
           </div>

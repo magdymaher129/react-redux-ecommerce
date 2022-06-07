@@ -11,6 +11,7 @@ import {
 } from "../../reduxStore/createSlice";
 export default function Cart() {
   const { cartItem, price, qty } = useSelector((state) => state.update);
+
   const dispatch = useDispatch();
   const handleaddItem = (x) => {
     console.log(x.id);
@@ -127,7 +128,7 @@ export default function Cart() {
           <h2 className='text-center'> No items selected </h2>
         ) : (
           <div className=' mx-5 d-flex justify-content-between'>
-            <p className='fw-bold fs-4'> Total= $ {price}</p>
+            <p className='fw-bold fs-4'> Total= ${price}</p>
             <div className=' d-flex  '>
               <button className=' btn btn-outline-dark mx-1'> Buy Now </button>
               <button
